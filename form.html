@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact Form</title>
+
+  <style>
+    body{
+      background:#e5e5e5;
+      font-family:Arial, sans-serif;
+    }
+
+    .container{
+      width:320px;
+      margin:20px auto;
+    }
+
+    h1{
+      text-align:center;
+      font-family:Georgia, serif;
+      font-size:52px;
+      margin-bottom:25px;
+      font-weight:normal;
+    }
+
+    label{
+      display:block;
+      margin:15px 0 8px;
+      font-size:14px;
+    }
+
+    input[type="text"],
+    input[type="tel"]{
+      width:100%;
+      height:36px;
+      border:1px solid #888;
+      box-sizing:border-box;
+      background:white;
+    }
+
+    .date-row{
+      display:flex;
+      gap:16px;
+      margin-top:10px;
+    }
+
+    .date-col{
+      display:flex;
+      flex-direction:column;
+    }
+
+    .date-col label{
+      margin-bottom:6px;
+    }
+
+    .small{
+      width:52px;
+      height:30px;
+    }
+
+    .month{
+      width:105px;
+      height:34px;
+    }
+
+    .radio-group{
+      margin-top:10px;
+    }
+
+    .radio-group label{
+      display:flex;
+      align-items:center;
+      gap:8px;
+      margin:8px 0;
+    }
+
+    .checkbox{
+      display:flex;
+      align-items:center;
+      gap:8px;
+      margin-top:15px;
+    }
+
+    button{
+      width:100%;
+      background:black;
+      color:white;
+      border:none;
+      padding:14px;
+      margin-top:20px;
+      cursor:pointer;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+
+  <h1>Contact</h1>
+
+  <form id="bookingForm">
+
+    <label>First name</label>
+    <input type="text">
+
+    <label>Last name</label>
+    <input type="text">
+
+    <label>Phone</label>
+    <input type="tel">
+
+    <label>Date and time</label>
+
+    <div class="date-row">
+
+      <div class="date-col">
+        <label>Day</label>
+        <input class="small" type="text">
+      </div>
+
+      <div class="date-col">
+        <label>Month</label>
+        <select class="month">
+          <option></option>
+          <option>January</option>
+          <option>February</option>
+          <option>March</option>
+          <option>April</option>
+          <option>May</option>
+          <option>June</option>
+          <option>July</option>
+          <option>August</option>
+          <option>September</option>
+          <option>October</option>
+          <option>November</option>
+          <option>December</option>
+        </select>
+      </div>
+
+      <div class="date-col">
+        <label>Year</label>
+        <input class="small" type="text">
+      </div>
+
+      <div class="date-col">
+        <label>Time</label>
+        <input class="small" type="text" placeholder="--:--">
+      </div>
+
+    </div>
+
+    <label>Seating preference</label>
+
+    <div class="radio-group">
+      <label><input type="radio" name="seat"> Indoor</label>
+      <label><input type="radio" name="seat"> Outdoor</label>
+    </div>
+
+    <label>Additional requests</label>
+    <input type="text">
+
+    <div class="checkbox">
+      <input type="checkbox">
+      <span>Yes, subscribe me to your newsletter.</span>
+    </div>
+
+    <button type="submit">Request booking</button>
+
+  </form>
+</div>
+
+<script>
+  document.getElementById('bookingForm')
+          .addEventListener('submit', function(e){
+            e.preventDefault();
+            alert('Booking request sent!');
+          });
+</script>
+
+</body>
+</html>
